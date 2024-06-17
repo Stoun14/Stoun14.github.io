@@ -1,0 +1,36 @@
+/* global */
+/* ****** */
+
+body {
+    margin: 0;
+}
+
+/* main-container */
+/* ************** */
+
+/* header */
+/* ****** */
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo, .location {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    padding: 14px 0;
+    img {
+        height: 36px;
+        width: auto;
+    }
+}
+
+.location {
+    align-items: center;
+    background-color: #eaeaea;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
