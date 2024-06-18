@@ -1,8 +1,41 @@
+/* variables */
+/* ********* */
+
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$bg-white: #F3F3F3;
+
 /* global */
 /* ****** */
 
+* {
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+}
+
 body {
     margin: 0;
+}
+
+.title {
+    font-family: Shrikhand, serif;
+}
+
+.card {
+    width: 340px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    
+    img {
+        height: 75%;
+        width: 100%;
+    }
+
+    &__container {
+        padding: 10px;
+    }
 }
 
 /* main-container */
@@ -10,6 +43,7 @@ body {
 
 /* header */
 /* ****** */
+
 header {
     display: flex;
     flex-direction: column;
@@ -31,6 +65,31 @@ header {
 
 .location {
     align-items: center;
-    background-color: #eaeaea;
+    background-color: #EAEAEA;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* reservation */
+/* *********** */
+
+.reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-white;
+    padding: 0 15px;
+
+    &__title {
+        font-size: 24px;
+    }
+
+    &__content {
+        font-size: 18px;
+    }
+
+    &__btn {
+        padding: 0 20px;
+        background-image: linear-gradient($secondary, $primary);
+        border-radius: 25px;        
+    }
 }

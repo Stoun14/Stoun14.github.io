@@ -1,7 +1,18 @@
+/* variables */
+/* ********* */
 /* global */
 /* ****** */
+* {
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
+}
+
+.title {
+  font-family: Shrikhand, serif;
 }
 
 /* main-container */
@@ -29,8 +40,29 @@ header {
 
 .location {
   align-items: center;
-  background-color: #eaeaea;
+  background-color: #EAEAEA;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* reservation */
+/* *********** */
+.reservation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F3F3F3;
+  padding: 0 15px;
+}
+.reservation__title {
+  font-size: 24px;
+}
+.reservation__content {
+  font-size: 18px;
+}
+.reservation__btn {
+  padding: 0 20px;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 25px;
 }
 
 /*# sourceMappingURL=styles.css.map */
