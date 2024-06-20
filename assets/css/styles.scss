@@ -1,10 +1,14 @@
-/* variables */
-/* ********* */
+/* variables & mixin */
+/* ***************** */
 
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 $bg-white: #F3F3F3;
+
+@mixin btn-shadow {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
 
 /* global */
 /* ****** */
@@ -19,14 +23,15 @@ body {
 }
 
 .title {
-    font-family: Shrikhand, serif;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .card {
     width: 340px;
     height: 250px;
     border-radius: 15px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    @include btn-shadow;
     
     img {
         height: 75%;
@@ -66,7 +71,10 @@ header {
 .location {
     align-items: center;
     background-color: #EAEAEA;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    @include btn-shadow;
+    i {
+        margin: 0 20px 0 0;
+    }
 }
 
 /* reservation */
@@ -76,20 +84,58 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     background-color: $bg-white;
-    padding: 0 15px;
 
     &__title {
-        font-size: 24px;
+        padding: 40px 0 10px;
     }
 
-    &__content {
+    &__content {        
         font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 28px;
     }
 
     &__btn {
+
         padding: 0 20px;
         background-image: linear-gradient($secondary, $primary);
-        border-radius: 25px;        
+        border-radius: 25px;
+        margin-bottom: 52px;        
     }
+}
+
+h1 {
+    margin: 0;
+}
+
+/* functionning */
+/* ************ */
+
+.functionning {
+    padding: 30px 20px;
+}
+
+.tutorial {
+    display: flex;
+    flex-direction: column;
+
+    &__step {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__number {
+            width: 20px;
+            height: 20px;
+            background-color: $primary;
+            border-radius: 10px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: row;
+        }
+    }    
 }

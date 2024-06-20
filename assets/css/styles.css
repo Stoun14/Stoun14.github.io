@@ -1,5 +1,5 @@
-/* variables */
-/* ********* */
+/* variables & mixin */
+/* ***************** */
 /* global */
 /* ****** */
 * {
@@ -12,7 +12,22 @@ body {
 }
 
 .title {
-  font-family: Shrikhand, serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card {
+  width: 340px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.card img {
+  height: 75%;
+  width: 100%;
+}
+.card__container {
+  padding: 10px;
 }
 
 /* main-container */
@@ -43,26 +58,62 @@ header {
   background-color: #EAEAEA;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
+.location i {
+  margin: 0 20px 0 0;
+}
 
 /* reservation */
 /* *********** */
 .reservation {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #F3F3F3;
-  padding: 0 15px;
 }
 .reservation__title {
-  font-size: 24px;
+  padding: 40px 0 10px;
 }
 .reservation__content {
   font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 28px;
 }
 .reservation__btn {
   padding: 0 20px;
   background-image: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
+  margin-bottom: 52px;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* functionning */
+/* ************ */
+.functionning {
+  padding: 32px 20px;
+}
+
+.tutorial {
+  display: flex;
+  flex-direction: column;
+}
+.tutorial__step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tutorial__step__number {
+  width: 20px;
+  height: 20px;
+  background-color: #9356DC;
+  border-radius: 10px;
+}
+.tutorial__step__content {
+  display: flex;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=styles.css.map */
