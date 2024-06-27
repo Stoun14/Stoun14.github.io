@@ -10,6 +10,11 @@ $bg-white: #F3F3F3;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 /* global */
 /* ****** */
 
@@ -26,6 +31,8 @@ body {
     font-size: 24px;
     font-weight: 700;
 }
+
+
 
 .card {
     width: 340px;
@@ -120,22 +127,41 @@ h1 {
 .tutorial {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
     &__step {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        @include flex-row;
+        align-items: center;      
 
         &__number {
-            width: 20px;
-            height: 20px;
             background-color: $primary;
-            border-radius: 10px;
-        }
+            height: 24px;
+            width: 24px;
+            border-radius: 12px;          
+            z-index: 999;
+            color: $bg-white;
+            font-size: 14px;
+            }        
 
         &__content {
-            display: flex;
-            flex-direction: row;
+            @include flex-row;
+            background-color: $bg-white;
+            margin-left: -12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);           
+            
+            &__icon {
+                padding: 15px 15px 0 40px;                
+            }
+
+            &__icon--violet {
+                color: $primary;
+            }
+
+            &__explanation {
+                padding-right: 90px;
+            }
+            
         }
     }    
 }
