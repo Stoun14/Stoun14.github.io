@@ -5,29 +5,13 @@
 * {
   font-family: Roboto, sans-serif;
   text-decoration: none;
-}
-
-body {
+  box-sizing: border-box;
   margin: 0;
 }
 
 .title {
   font-size: 24px;
-  font-weight: 700;
-}
-
-.card {
-  width: 340px;
-  height: 250px;
-  border-radius: 15px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-.card img {
-  height: 75%;
-  width: 100%;
-}
-.card__container {
-  padding: 10px;
+  font-weight: bold;
 }
 
 /* main-container */
@@ -40,26 +24,27 @@ header {
 }
 
 .logo, .location {
-  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .logo {
-  padding: 14px 0;
+  height: 62px;
 }
 .logo img {
   height: 36px;
-  width: auto;
 }
 
 .location {
-  align-items: center;
   background-color: #EAEAEA;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-.location i {
-  margin: 0 20px 0 0;
+.location p {
+  margin-left: 10px;
 }
 
 /* reservation */
@@ -67,12 +52,14 @@ header {
 .reservation {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
+  align-items: center;
   background-color: #F3F3F3;
+  padding: 40px 0 50px;
 }
 .reservation__title {
-  padding: 40px 0 10px;
+  width: 275px;
+  height: 68px;
 }
 .reservation__content {
   font-size: 18px;
@@ -80,33 +67,31 @@ header {
   margin-bottom: 28px;
 }
 .reservation__btn {
-  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 218px;
+  height: 50px;
   background-image: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
-  margin-bottom: 52px;
-}
-
-h1 {
-  margin: 0;
 }
 
 /* functionning */
 /* ************ */
 .functionning {
   padding: 30px 20px;
-}
-
-.tutorial {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
-.tutorial__step {
+.functionning__step {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
-.tutorial__step__number {
+.functionning__step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #9356DC;
   height: 24px;
   width: 24px;
@@ -115,22 +100,72 @@ h1 {
   color: #F3F3F3;
   font-size: 14px;
 }
-.tutorial__step__content {
+.functionning__step__content {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   background-color: #F3F3F3;
   margin-left: -12px;
+  height: 72px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
-.tutorial__step__content__icon {
-  padding: 15px 15px 0 40px;
+.functionning__step__content__icon {
+  margin: 0 20px 2px 35px;
 }
-.tutorial__step__content__icon--violet {
+.functionning__step__content__icon--violet {
   color: #9356DC;
 }
-.tutorial__step__content__explanation {
-  padding-right: 90px;
+
+/* restaurants */
+/* *********** */
+.restaurants {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #F3F3F3;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.card img {
+  width: 100%;
+  height: 174px;
+  object-fit: cover;
+  object-position: center center;
+}
+.card__content {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  color: black;
+}
+.card__content__left {
+  font-size: 18px;
+  font-weight: bold;
+  width: 75%;
+}
+.card__content__left p {
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+.card__content__right {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: flex-end;
+}
+.card__content__right i {
+  width: 22px;
+  height: 21px;
 }
 
 /*# sourceMappingURL=styles.css.map */

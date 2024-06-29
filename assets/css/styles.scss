@@ -15,39 +15,30 @@ $bg-white: #F3F3F3;
     flex-direction: row;
 }
 
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* global */
 /* ****** */
 
 * {
     font-family: Roboto, sans-serif;
     text-decoration: none;
-}
-
-body {
+    box-sizing: border-box;
     margin: 0;
 }
 
 .title {
     font-size: 24px;
-    font-weight: 700;
-}
-
-
-
-.card {
-    width: 340px;
-    height: 250px;
-    border-radius: 15px;
-    @include btn-shadow;
-    
-    img {
-        height: 75%;
-        width: 100%;
-    }
-
-    &__container {
-        padding: 10px;
-    }
+    font-weight: bold;
 }
 
 /* main-container */
@@ -57,45 +48,46 @@ body {
 /* ****** */
 
 header {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
 }
 
 .logo, .location {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    @include flex-center;
 }
 
 .logo {
-    padding: 14px 0;
+    height: 62px;
+
     img {
         height: 36px;
-        width: auto;
     }
 }
 
 .location {
-    align-items: center;
     background-color: #EAEAEA;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
     @include btn-shadow;
-    i {
-        margin: 0 20px 0 0;
-    }
+
+    p {
+        margin-left: 10px;
+    }    
 }
 
 /* reservation */
 /* *********** */
 
 .reservation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-col;
     text-align: center;
+    align-items: center;
     background-color: $bg-white;
+    padding: 40px 0 50px;
 
     &__title {
-        padding: 40px 0 10px;
+        width: 275px;
+        height: 68px;
     }
 
     &__content {        
@@ -105,16 +97,12 @@ header {
     }
 
     &__btn {
-
-        padding: 0 20px;
+        @include flex-center;
+        width: 218px;
+        height: 50px;
         background-image: linear-gradient($secondary, $primary);
         border-radius: 25px;
-        margin-bottom: 52px;        
-    }
-}
-
-h1 {
-    margin: 0;
+        }
 }
 
 /* functionning */
@@ -122,18 +110,15 @@ h1 {
 
 .functionning {
     padding: 30px 20px;
-}
-
-.tutorial {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    @include flex-col;
+    gap: 30px;
 
     &__step {
-        @include flex-row;
+        display: flex;
         align-items: center;      
 
         &__number {
+            @include flex-center;
             background-color: $primary;
             height: 24px;
             width: 24px;
@@ -144,24 +129,79 @@ h1 {
             }        
 
         &__content {
-            @include flex-row;
+            display: flex;
+            align-items: center;
             background-color: $bg-white;
             margin-left: -12px;
+            height: 72px;
+            width: 100%;
             border-radius: 20px;
             box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);           
             
             &__icon {
-                padding: 15px 15px 0 40px;                
+                margin: 0 20px 2px 35px;                
             }
 
             &__icon--violet {
                 color: $primary;
-            }
-
-            &__explanation {
-                padding-right: 90px;
-            }
-            
+            }                       
         }
     }    
+}
+
+/* restaurants */
+/* *********** */
+
+.restaurants {
+    padding: 30px 20px;
+    @include flex-col;
+    gap: 20px;
+    background-color: $bg-white;
+}
+
+.card {
+    @include flex-col;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    @include btn-shadow;
+            
+    img {
+        width: 100%;
+        height: 174px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    &__content {
+        @include flex-row;
+        padding: 10px;
+        color: black;
+
+        &__left {
+            font-size: 18px;
+            font-weight: bold;
+            width: 75%;
+            
+            p {
+                padding: 5px 0;
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            width: 25%;
+            justify-content: flex-end;
+
+            i {
+                width: 22px;
+                height: 21px;
+            }
+        }
+
+
+    }
 }
