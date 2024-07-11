@@ -1,5 +1,55 @@
 /* variables & mixin */
 /* ***************** */
+@keyframes fade_in-out {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* loader */
+/* ****** */
+.main-container {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade_in-out 1s linear 3s both;
+}
+.loader i {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+}
+
 /* global */
 /* ****** */
 * {
@@ -72,12 +122,15 @@ header {
   justify-content: center;
   width: 218px;
   height: 50px;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
   color: white;
-  /* &:hover {
-      filter: brightness(108%);
-  } */
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+.reservation__btn:hover {
+  filter: brightness(108%);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* functionning */
@@ -100,7 +153,7 @@ header {
   height: 24px;
   width: 24px;
   border-radius: 12px;
-  z-index: 999;
+  z-index: 99;
   color: white;
   font-size: 14px;
 }
@@ -155,7 +208,7 @@ header {
   position: absolute;
   left: 258px;
   top: 12px;
-  z-index: 999;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,6 +235,34 @@ header {
   align-items: center;
   width: 25%;
   justify-content: flex-end;
+}
+.card__content__right .hearts {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+}
+.card__content__right .heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.card__content__right .heart2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card__content__right .heart2:hover {
+  animation: fill 0.5s ease-in forwards;
+}
+.card__content__right .heart2:active {
+  opacity: 1;
 }
 
 /* footer */
