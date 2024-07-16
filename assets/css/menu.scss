@@ -1,0 +1,103 @@
+/* variables & mixin */
+/* ***************** */
+
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$bg-white: #F3F3F3;
+
+@mixin btn-shadow {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin violet-gradient {
+    background: linear-gradient($secondary, $primary);
+}
+
+@keyframes fill {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    50% {
+        opacity: .5;
+        scale: .5;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+    
+}
+
+/* global */
+/* ****** */
+
+* {
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* main-container */
+/* ************** */
+
+/* header */
+/* ****** */
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        color: black;
+    }
+
+    i {
+        font-size: 30px;
+    }
+}
+
+.logo {
+    height: 62px;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 36px;
+    }
+}
+
+/* restaurant */
+/* ********** */
+
+
+

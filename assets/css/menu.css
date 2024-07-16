@@ -1,0 +1,62 @@
+/* variables & mixin */
+/* ***************** */
+@keyframes fill {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  50% {
+    opacity: 0.5;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+/* global */
+/* ****** */
+* {
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* main-container */
+/* ************** */
+/* header */
+/* ****** */
+header {
+  /* position: relative; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+header a {
+  /* position: absolute;
+  top: 18px;
+  left: 18px; */
+  color: black;
+}
+header i {
+  font-size: 30px;
+}
+
+.logo {
+  height: 62px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 36px;
+}
+
+/*# sourceMappingURL=menu.css.map */
