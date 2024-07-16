@@ -30,11 +30,16 @@ $bg-white: #F3F3F3;
 }
 
 @keyframes fade_in-out {
-    from {
+    0% {
         display: flex;
         opacity: 1;
     }
-    to {
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
         display: none;
         opacity: 0;
     }
@@ -43,17 +48,17 @@ $bg-white: #F3F3F3;
 @keyframes fill {
     0% {
         opacity: 0;
-        transform: scale(0);
+        scale: 0;
     }
 
     50% {
-        opacity: 1;
-        transform: scale(.5);
+        opacity: .5;
+        scale: .5;
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        scale: 1;
     }
     
 }
@@ -67,16 +72,19 @@ $bg-white: #F3F3F3;
 
 .loader {
     position: absolute;
-    min-height: 100vh;
+    min-height: 325vh;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 999;
     background-color: $bg-white;
-    @include flex-center;
-    animation: fade_in-out 1s linear 3s both;
+    display: flex;
+    justify-content: center;
+    animation: fade_in-out .5s linear 4s both;
 
     i {
+        position: fixed;
+        top: 50%;
         background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -142,7 +150,7 @@ header {
     text-align: center;
     align-items: center;
     background-color: $bg-white;
-    padding: 40px 0 50px;
+    padding: 40px 15px 50px;
 
     &__title {
         width: 275px;
@@ -177,7 +185,9 @@ header {
 
 .functionning {
     padding: 30px 20px;
-    @include flex-col;
+    display: grid;
+    grid-template-rows: 28px repeat(3, 72px);
+    grid-template-columns: 1fr;
     gap: 30px;
 
     &__step {
@@ -200,8 +210,9 @@ header {
             align-items: center;
             background-color: $bg-white;
             margin-left: -12px;
-            height: 72px;
+            height: 100%;
             width: 100%;
+            padding-right: 10px;
             border-radius: 20px;
             box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);       
             
@@ -213,7 +224,7 @@ header {
                 color: $primary;
             }                       
         }
-    }    
+    }
 }
 
 /* restaurants */
@@ -221,7 +232,8 @@ header {
 
 .restaurants {
     padding: 30px 20px;
-    @include flex-col;
+    display: grid;
+    grid-template: 28px repeat(4, 1fr) / 1fr;
     gap: 20px;
     background-color: $bg-white;
 }
@@ -248,7 +260,7 @@ header {
         background-color: $tertiary;
         color: #008766;
         position: absolute;
-        left: 258px;
+        left: 76%;
         top: 12px;
         z-index: 99;
         @include flex-center;
@@ -324,18 +336,114 @@ footer {
         margin-bottom: 20px;
     }
 
-    ul {
+    .footer__links {
         @include flex-col;
-        gap: 5px;        
-        padding: 0;
-        list-style-type: none;
+        gap: 5px;
 
         a {
             color: white;
-        }
+        }        
 
         i {
             margin-right: 8px;
+        }
+    }
+}
+
+/* responsive */
+/* ********** */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* reservation */
+    /* *********** */
+
+    .reservation__title {
+        width: 100%;
+        height: 48px;
+    }
+
+    /* functionning */
+    /* ************ */
+
+    .functionning {
+        padding: 25px 90px;
+    }
+
+    /* restaurants */
+    /* *********** */
+
+    .restaurants {
+        padding: 25px 90px;
+    }
+    .card {
+        .new{
+            left: 84%;
+        }    
+    }
+    
+}
+
+@media (min-width: 1024px) {
+
+    /* reservation */
+    /* *********** */
+
+    .reservation__title {
+        width: 100%;
+        height: 48px;
+    }
+
+    /* functionning */
+    /* ************ */
+
+    .functionning {
+        padding: 50px 180px;
+        grid-template: 28px 72px / repeat(3, 1fr);
+
+        &__title {
+            grid-column: 1 / -1;
+        }
+    }
+
+    /* restaurants */
+    /* *********** */
+
+    .restaurants {
+        padding: 50px 180px;
+        grid-template: 28px repeat(2, 1fr) / repeat(2, 1fr);
+        gap: 50px 100px;
+
+        &__title {
+            grid-column: 1 / -1;
+        }
+    }
+
+    /* footer */
+    /* ****** */
+
+    footer{
+        display: flex;
+        flex-direction: row-reverse;
+
+        h2 {
+            height: 28px;
+            margin-left: 80px;
+            padding: 10px 40px 0 0;
+        }
+
+        .footer__links {
+            @include flex-row;
+            gap: 8px;
+            align-items: center;
+            
+            a:nth-child(3) {
+                margin-left: 20px;
+            }
+
+            a:nth-child(4) {
+                margin-left: 5px;
+            }
         }
     }
 }
