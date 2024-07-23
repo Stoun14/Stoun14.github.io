@@ -43,7 +43,7 @@
   background-color: #F3F3F3;
   display: flex;
   justify-content: center;
-  animation: fade_in-out 0.5s linear 4s both;
+  animation: fade_in-out 0.5s linear 3s both;
 }
 .loader i {
   position: fixed;
@@ -130,10 +130,10 @@ header {
   border-radius: 25px;
   color: white;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: all 100ms linear;
 }
 .reservation__btn:hover {
-  filter: brightness(108%);
+  filter: brightness(110%);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -265,7 +265,7 @@ header {
   -webkit-text-fill-color: transparent;
 }
 .card__content__right .heart2:hover {
-  animation: fill 0.5s ease-in forwards;
+  animation: fill 300ms linear forwards;
 }
 
 /* footer */
