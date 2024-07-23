@@ -47,9 +47,20 @@ $bg-white: #F6F6F6;
     
 }
 
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes draw {
     to {
-      stroke-dashoffset: 0;
+        stroke-dashoffset: 0;
+        display: block;
     }
 }
 
@@ -96,7 +107,6 @@ header {
 }
 
 .hero {
-    width: 100%;
 
     img {
         height: 275px;
@@ -119,6 +129,7 @@ header {
     padding: 30px 10px 0;
 
     &__title {
+
         font-family: Shrikhand, sans-serif;
         font-size: 28px;
         font-weight: 400;
@@ -140,10 +151,7 @@ header {
     background-color: #FFFFFF;
     border-radius: 15px;
     padding: 15px;
-
-    &:hover + &__check path + &__check {
-        animation: draw 300ms linear forwards;
-    }   
+    animation: fadein 2s ease-in ;
 
     &__intro, &__content {
         display: flex;
@@ -153,6 +161,15 @@ header {
     &__check {
         height: 22px;
         width: 22px;
+    }
+
+    &:active &__check path {
+        animation: draw 200ms step-start forwards;
+    }  
+
+    &:not(:active) &__check path {
+        display: none;
+        animation: draw 200ms step-end forwards;
     }
 
     &__check path {
