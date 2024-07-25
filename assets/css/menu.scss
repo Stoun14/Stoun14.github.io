@@ -170,7 +170,7 @@ header {
     }
 }
 
-.firstcourse {
+.firstcourse, .course, .dessert {
     display: grid;
     grid-template-rows: 28px 4px repeat(3, 68px);
     gap: 12px;
@@ -265,9 +265,21 @@ header {
 }
 
 .card2 {
-    animation: fadein 2s ease-in 1s forwards;
+    animation: fadein 2s ease-in .5s forwards;
 }
 
 .card3 {
+    animation: fadein 2s ease-in 1s forwards;
+}
+
+.card4 {
+    animation: fadein 2s ease-in 1.5s forwards;
+}
+
+.card5 {
     animation: fadein 2s ease-in 2s forwards;
+}
+
+.card6 {
+    animation: fadein 2s ease-in 2.5s forwards;
 }

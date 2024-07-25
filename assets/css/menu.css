@@ -199,11 +199,23 @@ header .logo img {
 }
 
 .card2 {
-  animation: fadein 2s ease-in 1s forwards;
+  animation: fadein 2s ease-in 0.5s forwards;
 }
 
 .card3 {
+  animation: fadein 2s ease-in 1s forwards;
+}
+
+.card4 {
+  animation: fadein 2s ease-in 1.5s forwards;
+}
+
+.card5 {
   animation: fadein 2s ease-in 2s forwards;
+}
+
+.card6 {
+  animation: fadein 2s ease-in 2.5s forwards;
 }
 
 /*# sourceMappingURL=menu.css.map */
