@@ -79,7 +79,7 @@ header .logo img {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 30px 10px 0;
+  padding: 30px 10px 40px;
 }
 .restaurant__intro {
   display: flex;
@@ -253,6 +253,86 @@ h2 {
 
 .card9 {
   animation: fadein 2s ease-in 4s forwards;
+}
+
+/* footer */
+/* ****** */
+footer {
+  position: absolute;
+  top: 1440px;
+  width: 100%;
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+footer h2 {
+  font-family: Shrikhand, sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+footer .footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer .footer__links a {
+  color: white;
+}
+footer .footer__links i {
+  margin-right: 8px;
+}
+
+/* responsive */
+/* ********** */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* header */
+  /* ****** */
+  .hero img {
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  /* main-container */
+  /* ************** */
+  .main-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  /* header */
+  /* ****** */
+  .hero img {
+    height: 383px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .restaurant {
+    top: 353px;
+    max-width: 1055px;
+    justify-self: center;
+  }
+  /* footer */
+  /* ****** */
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  footer h2 {
+    height: 28px;
+    margin-left: 80px;
+    padding: 10px 40px 0 0;
+  }
+  footer .footer__links {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+  footer .footer__links a:nth-child(3) {
+    margin-left: 20px;
+  }
+  footer .footer__links a:nth-child(4) {
+    margin-left: 5px;
+  }
 }
 
 /*# sourceMappingURL=menu.css.map */
