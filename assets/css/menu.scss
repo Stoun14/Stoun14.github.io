@@ -320,3 +320,31 @@ h2 {
 .card9 {
     animation: fadein 2s ease-in 4s forwards;
 }
+
+/* footer */
+/* ****** */
+
+footer {
+    padding: 20px;
+    background-color: black;
+    color: white;
+
+    h2 {
+        font-family: Shrikhand, sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer__links {
+        @include flex-col;
+        gap: 5px;
+
+        a {
+            color: white;
+        }        
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
