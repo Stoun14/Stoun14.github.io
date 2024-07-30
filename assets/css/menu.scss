@@ -110,7 +110,8 @@ header {
 
     img {
         height: 275px;
-        width: 100%;  
+        width: 100%;
+        object-fit: cover;  
     }
 }
 
@@ -195,7 +196,7 @@ header {
     gap: 12px;
 }
 
-.firstcourse3 {
+.firstcourse2 {
     display: grid;
     grid-template-rows: auto 3px repeat(4, 68px);
     gap: 12px;
@@ -336,7 +337,35 @@ h2 {
 
 footer {
     position: absolute;
-    top: 1440px;
+    top: 1435px;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    color: white;
+
+    h2 {
+        font-family: Shrikhand, sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer__links {
+        @include flex-col;
+        gap: 5px;
+
+        a {
+            color: white;
+        }        
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+.footer2 {
+    position: absolute;
+    top: 1520px;
     width: 100%;
     padding: 20px;
     background-color: black;
@@ -376,6 +405,13 @@ footer {
             height: auto; 
         }
     }
+
+    /* restaurant */
+    /* ********** */
+
+    .restaurant {
+        width: 100%;
+    }
     
 }
 
@@ -396,7 +432,6 @@ footer {
 
         img {
             height: 383px;
-            object-fit: cover;
             object-position: center center; 
         }
     }
@@ -406,9 +441,17 @@ footer {
 
     .restaurant {
         top: 353px;
-        width: 1055px;
+        max-width: 1055px;
         justify-self: center;
         align-items: center;
+
+        &__title {
+            height: 41px;
+        }
+
+        .hearts {
+            margin-left: 25px;
+        }
     }
 
     .card {

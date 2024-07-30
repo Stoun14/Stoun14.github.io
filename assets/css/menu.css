@@ -66,6 +66,7 @@ header .logo img {
 .hero img {
   height: 275px;
   width: 100%;
+  object-fit: cover;
 }
 
 /* restaurant */
@@ -139,6 +140,12 @@ header .logo img {
 .firstcourse, .course, .dessert {
   display: grid;
   grid-template-rows: auto 3px repeat(3, 68px);
+  gap: 12px;
+}
+
+.firstcourse2 {
+  display: grid;
+  grid-template-rows: auto 3px repeat(4, 68px);
   gap: 12px;
 }
 
@@ -255,11 +262,15 @@ h2 {
   animation: fadein 2s ease-in 4s forwards;
 }
 
+.card10 {
+  animation: fadein 2s ease-in 4.5s forwards;
+}
+
 /* footer */
 /* ****** */
 footer {
   position: absolute;
-  top: 1440px;
+  top: 1435px;
   width: 100%;
   padding: 20px;
   background-color: black;
@@ -282,6 +293,31 @@ footer .footer__links i {
   margin-right: 8px;
 }
 
+.footer2 {
+  position: absolute;
+  top: 1535px;
+  width: 100%;
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+.footer2 h2 {
+  font-family: Shrikhand, sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.footer2 .footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer2 .footer__links a {
+  color: white;
+}
+.footer2 .footer__links i {
+  margin-right: 8px;
+}
+
 /* responsive */
 /* ********** */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -289,6 +325,11 @@ footer .footer__links i {
   /* ****** */
   .hero img {
     height: auto;
+  }
+  /* restaurant */
+  /* ********** */
+  .restaurant {
+    width: 100%;
   }
 }
 @media (min-width: 1024px) {
@@ -302,16 +343,21 @@ footer .footer__links i {
   /* ****** */
   .hero img {
     height: 383px;
-    object-fit: cover;
     object-position: center center;
   }
   /* restaurant */
   /* ********** */
   .restaurant {
     top: 353px;
-    width: 1055px;
+    max-width: 1055px;
     justify-self: center;
     align-items: center;
+  }
+  .restaurant__title {
+    height: 41px;
+  }
+  .restaurant .hearts {
+    margin-left: 25px;
   }
   .card {
     width: 634px;
