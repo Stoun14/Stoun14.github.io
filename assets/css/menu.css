@@ -305,10 +305,22 @@ footer .footer__links i {
     object-fit: cover;
     object-position: center center;
   }
+  /* restaurant */
+  /* ********** */
   .restaurant {
     top: 353px;
-    max-width: 1055px;
+    width: 1055px;
     justify-self: center;
+    align-items: center;
+  }
+  .card {
+    width: 634px;
+  }
+  .card #card:hover ~ .card__content {
+    width: calc(100% - 70px);
+  }
+  .card #card:hover ~ .card__check {
+    transform: translateX(-70px);
   }
   /* footer */
   /* ****** */
