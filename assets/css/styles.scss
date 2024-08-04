@@ -413,6 +413,12 @@ footer {
         grid-template: 28px repeat(2, 1fr) / repeat(2, 1fr);
         gap: 50px 100px;
 
+        .card {
+            .new{
+                left: 87%;
+            }    
+        }
+
         &__title {
             grid-column: 1 / -1;
         }
