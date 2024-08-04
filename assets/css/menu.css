@@ -1,17 +1,14 @@
 /* variables & mixin */
 /* ***************** */
-@keyframes fill {
+@keyframes filling {
   0% {
     opacity: 0;
-    scale: 0;
   }
   50% {
     opacity: 0.5;
-    scale: 0.5;
   }
   100% {
     opacity: 1;
-    scale: 1;
   }
 }
 @keyframes fadein {
@@ -35,6 +32,12 @@
   text-decoration: none;
   box-sizing: border-box;
   margin: 0;
+}
+
+.svg-gradient {
+  width: 0;
+  height: 0;
+  position: absolute;
 }
 
 /* main-container */
@@ -72,10 +75,9 @@ header .logo img {
 /* restaurant */
 /* ********** */
 .restaurant {
-  position: absolute;
   border-radius: 25px 25px 0 0;
   background-color: #F6F6F6;
-  top: 302px;
+  margin-top: -30px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -88,36 +90,35 @@ header .logo img {
   align-items: center;
   height: 32px;
 }
+.restaurant__intro .hearts {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.restaurant__intro .heart1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  z-index: 9;
+}
+.restaurant__intro .heart2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  z-index: 99;
+  opacity: 0;
+  fill: url(#gradient1);
+}
+.restaurant__intro .heart2:hover {
+  animation: filling 200ms ease-in forwards;
+}
 .restaurant__title {
   font-family: Shrikhand, sans-serif;
   font-size: 28px;
   font-weight: 400;
   height: 32px;
-}
-.restaurant .hearts {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  font-size: 22px;
-}
-.restaurant .heart {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9;
-}
-.restaurant .heart2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  opacity: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.restaurant .heart2:hover {
-  animation: fill 300ms linear forwards;
 }
 .restaurant__btn {
   margin: 0 auto;
@@ -169,7 +170,7 @@ h2 {
   justify-content: space-between;
   opacity: 0;
 }
-.card #card {
+.card__checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -178,10 +179,10 @@ h2 {
   opacity: 0;
   cursor: pointer;
 }
-.card #card:checked ~ .card__content {
+.card__checkbox:checked ~ .card__content {
   width: calc(100% - 70px);
 }
-.card #card:checked ~ .card__check {
+.card__checkbox:checked ~ .card__check {
   transform: translateX(-70px);
 }
 .card__content {
@@ -227,50 +228,48 @@ h2 {
 }
 
 .card1 {
-  animation: fadein 2s ease-in forwards;
+  animation: fadein 100ms ease-in forwards;
 }
 
 .card2 {
-  animation: fadein 2s ease-in 0.5s forwards;
+  animation: fadein 100ms ease-in 100ms forwards;
 }
 
 .card3 {
-  animation: fadein 2s ease-in 1s forwards;
+  animation: fadein 100ms ease-in 150ms forwards;
 }
 
 .card4 {
-  animation: fadein 2s ease-in 1.5s forwards;
+  animation: fadein 100ms ease-in 200ms forwards;
 }
 
 .card5 {
-  animation: fadein 2s ease-in 2s forwards;
+  animation: fadein 100ms ease-in 250ms forwards;
 }
 
 .card6 {
-  animation: fadein 2s ease-in 2.5s forwards;
+  animation: fadein 100ms ease-in 300ms forwards;
 }
 
 .card7 {
-  animation: fadein 2s ease-in 3s forwards;
+  animation: fadein 100ms ease-in 350ms forwards;
 }
 
 .card8 {
-  animation: fadein 2s ease-in 3.5s forwards;
+  animation: fadein 100ms ease-in 400ms forwards;
 }
 
 .card9 {
-  animation: fadein 2s ease-in 4s forwards;
+  animation: fadein 100ms ease-in 450ms forwards;
 }
 
 .card10 {
-  animation: fadein 2s ease-in 4.5s forwards;
+  animation: fadein 100ms ease-in 500ms forwards;
 }
 
 /* footer */
 /* ****** */
 footer {
-  position: absolute;
-  top: 1435px;
   width: 100%;
   padding: 20px;
   background-color: black;
@@ -290,31 +289,6 @@ footer .footer__links a {
   color: white;
 }
 footer .footer__links i {
-  margin-right: 8px;
-}
-
-.footer2 {
-  position: absolute;
-  top: 1535px;
-  width: 100%;
-  padding: 20px;
-  background-color: black;
-  color: white;
-}
-.footer2 h2 {
-  font-family: Shrikhand, sans-serif;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.footer2 .footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.footer2 .footer__links a {
-  color: white;
-}
-.footer2 .footer__links i {
   margin-right: 8px;
 }
 
@@ -359,13 +333,16 @@ footer .footer__links i {
   .restaurant .hearts {
     margin-left: 25px;
   }
+  .restaurant .heart2:hover {
+    animation: filling 200ms ease-in forwards;
+  }
   .card {
     width: 634px;
   }
-  .card #card:hover ~ .card__content {
+  .card__checkbox:hover ~ .card__content {
     width: calc(100% - 70px);
   }
-  .card #card:hover ~ .card__check {
+  .card__checkbox:hover ~ .card__check {
     transform: translateX(-70px);
   }
   /* footer */
